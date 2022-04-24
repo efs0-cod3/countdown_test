@@ -8,7 +8,8 @@ const paused = document.querySelector('.pause')
 const notificationBtn = document.querySelector('.notification')
 let isPaused = false
 let title = document.querySelector('.ttl')
-
+const msg = document.querySelector('.msg')
+const mbtn = document.querySelector('.msg-btn')
 
 // functions
 function notif() {
@@ -81,13 +82,23 @@ function notifyMe() {
     }
     // At last, if the user has denied notifications, and you
     // want to be respectful there is no need to bother them anymore.   
+    if(msg != ''){
+    title.innerHTML = `${msg.value}`;
+    }
 }
 
 function showNotif() {
-    var notification = new Notification('CountDown', {
-        body: "Time's up",
-        icon: 'img/tup.png'
-    });
+    if (msg.value == '') {
+        let notification = new Notification('CountDown', {
+            body: "Time's up",
+            icon: 'img/tup.png'
+        });
+    } else {
+        let notification = new Notification('CountDown', {
+            body: msg.value,
+            icon: 'img/tup.png'
+        });
+    }
 }
 
 // eventlisterners
@@ -101,8 +112,8 @@ document.querySelector('.start').addEventListener('click', () => {
 
     let interval = setInterval(() => {
         if (!isPaused) {
-            title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
             countDown()
+            title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
         }
         if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
             clearInterval(interval)

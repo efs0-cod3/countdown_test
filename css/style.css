@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -10,6 +12,11 @@ align-items: center;
 text-align: center;
 background: rgb(29, 29, 29);
 color:white;
+font-family: 'Inconsolata', monospace;
+}
+h1{
+     font-size: 3rem;
+     font-weight: 600;
 }
 
 .time{
@@ -19,10 +26,9 @@ form{
      display: flex;
 }
 
-input{
+.itime{
      font-size: 20px;
      width: 70px;
-
      margin: 5px;
      text-align: center;
 }
@@ -40,4 +46,15 @@ button{
 }
 .s-hidden{
      display: none;
+}
+
+.second-field{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+
+.msg{
+     margin: 5px;
+     padding: 5px 10px;
 }
