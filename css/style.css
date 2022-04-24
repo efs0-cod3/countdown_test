@@ -58,3 +58,18 @@ button{
      margin: 5px;
      padding: 5px 10px;
 }
+
+@media all and (max-width: 800px) {
+     main{
+          width: 80%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+
+     }
+     .time{
+          flex-direction: column;
+
+     }
+}
