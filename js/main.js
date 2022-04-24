@@ -1,42 +1,34 @@
 //  selectors
-const s = document.querySelector('.s')
-const m = document.querySelector('.m')
-const h = document.querySelector('.h')
-const start = document.querySelector('.start')
-const reset = document.querySelector('.reset')
-const paused = document.querySelector('.pause')
-const notificationBtn = document.querySelector('.notification')
-let isPaused = false
-let title = document.querySelector('.ttl')
-const msg = document.querySelector('.msg')
-const mbtn = document.querySelector('.msg-btn')
+const s = document.querySelector('.s'); 
+const m = document.querySelector('.m');
+const h = document.querySelector('.h');
+const start = document.querySelector('.start');
+const reset = document.querySelector('.reset');
+const paused = document.querySelector('.pause');
+const notificationBtn = document.querySelector('.notification');
+let isPaused = false;
+let title = document.querySelector('.ttl');
+const msg = document.querySelector('.msg');
+const mbtn = document.querySelector('.msg-btn');
 
 // functions
 function notif() {
     if (Notification.permission === 'denied') {
-        notificationBtn.innerText = 'Notification denied'
+        notificationBtn.innerText = 'Notification denied';
     } else if(Notification.permission === 'granted') {
-        notificationBtn.innerText = 'Notification enabled'
+        notificationBtn.innerText = 'Notification enabled';
     }
 }
 notif()
 
 function pause() {
     if (!isPaused) {
-        isPaused = true
-        paused.innerText = 'Start'
+        isPaused = true;
+        paused.innerText = 'Start';
     } else {
-        paused.innerText = 'Pause'
-        isPaused = false
+        paused.innerText = 'Pause';
+        isPaused = false;
     }
-}
-
-function resett() {
-    h.value = ''
-    m.value = ''
-    s.value = ''
-    msg.value = ''
-    reset.classList.add('hide-reset')
 }
 
 function countDown() {
@@ -127,6 +119,7 @@ reset.addEventListener('click', () => {
     h.value = ''
     m.value = ''
     s.value = ''
+    msg.value = ''
     reset.classList.add('hide-reset')
     paused.classList.add('p-hidden')
     start.classList.remove('s-hidden')
