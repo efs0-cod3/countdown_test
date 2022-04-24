@@ -7,4 +7,4 @@ This is a challenge made for frontend eval
 - message to show when done (if user wants).
 - Start, Pause, and Reset buttons.
 
-## Live site: [CountDown](efs0-cod3.github.io/countdown_timer/ )
+## Live site: [CountDown](efs0-cod3.github.io/countDown_timer/)
