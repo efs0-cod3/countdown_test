@@ -35,6 +35,7 @@ function resett() {
     h.value = ''
     m.value = ''
     s.value = ''
+    msg.value = ''
     reset.classList.add('hide-reset')
 }
 
