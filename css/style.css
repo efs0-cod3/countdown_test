@@ -22,6 +22,7 @@ h1{
 .time{
      display: flex;
 }
+
 form{
      display: flex;
 }
@@ -36,15 +37,28 @@ form{
 button{
      margin: 5px;
      padding: 5px 10px;
+}
+
+#start {
+     cursor: pointer;
+}
+
+#pause{
+     cursor: pointer;
+}
+
+#reset{
      cursor: pointer;
 }
 
 .hide-reset{
      display: none;
 }
+
 .p-hidden{
      display: none;
 }
+
 .s-hidden{
      display: none;
 }
