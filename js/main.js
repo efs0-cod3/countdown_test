@@ -15,7 +15,7 @@ const mbtn = document.querySelector('.msg-btn')
 function notif() {
     if (Notification.permission === 'denied') {
         notificationBtn.innerText = 'Notification denied'
-    } else {
+    } else if(Notification.permission === 'granted') {
         notificationBtn.innerText = 'Notification enabled'
     }
 }
