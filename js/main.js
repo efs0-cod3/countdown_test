@@ -95,7 +95,7 @@ function showNotif() {
 }
 
 // eventlisterners
-document.querySelector('.start').addEventListener('click', () => {
+start.addEventListener('click', () => {
     start.classList.add('pressed')
     if (start.classList.contains('pressed')) {
         start.classList.add('s-hidden')
