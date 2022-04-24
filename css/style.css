@@ -36,6 +36,7 @@ form{
 button{
      margin: 5px;
      padding: 5px 10px;
+     cursor: pointer;
 }
 
 .hide-reset{
@@ -70,6 +71,5 @@ button{
      }
      .time{
           flex-direction: column;
-
      }
 }
