@@ -123,6 +123,7 @@ reset.addEventListener('click', () => {
     reset.classList.add('hide-reset')
     paused.classList.add('p-hidden')
     start.classList.remove('s-hidden')
+    location.reload()
 
 
 })
