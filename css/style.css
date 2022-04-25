@@ -14,6 +14,7 @@ background: rgb(29, 29, 29);
 color:white;
 font-family: 'Inconsolata', monospace;
 }
+
 h1{
      font-size: 3rem;
      font-weight: 600;
@@ -21,15 +22,21 @@ h1{
 
 .time{
      display: flex;
+     flex-direction: column;
 }
 
 .time-form{
      display: flex;
-}
+     align-items: center;
+     justify-content: start;
 
+}
+.timeInputs{
+     display: inherit;
+}
 .itime{
      font-size: 20px;
-     width: 70px;
+     width: 50px;
      margin: 5px;
      text-align: center;
 }
@@ -46,14 +53,17 @@ button{
 
 #start {
      cursor: pointer;
+     padding: 9px;
 }
 
 #pause{
      cursor: pointer;
+     padding: 9px;
 }
 
 #reset{
      cursor: pointer;
+     padding: 9px;
 }
 
 .hide-reset{

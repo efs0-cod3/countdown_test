@@ -11,7 +11,7 @@ let title = document.querySelector('.ttl');
 const msg = document.querySelector('.msg');
 const mbtn = document.querySelector('.msg-btn');
 
-// functions
+
 function notif() {
     if (Notification.permission === 'denied') {
         notificationBtn.innerText = 'Notification denied';
@@ -70,7 +70,7 @@ function notifyMe() {
         showNotif();
     }
     // Otherwise, we need to ask the user for permission
-    else if (Notification.permission !== "denied") {
+    else if (Notification.permission == "denied") {
         alert('Time\' up');
     }
     // At last, if the user has denied notifications, and you
@@ -135,18 +135,16 @@ function permission(){
     })
 }
 
-// eventlisterners
-start.addEventListener('click', work);
+let time_container = document.querySelector('.time')
 
-reset.addEventListener('click', clickToReset);
-
-paused.addEventListener('click', pause);
-
-notificationBtn.addEventListener('click', permission);
-
- 
-  start.onpointerdown = work;
-  reset.onpointerdown = clickToReset;
-  paused.onpointerdown = pause;
-  notificationBtn.onpointerdown = permission;
-  
+time_container.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'start') {
+        work()
+    }else if (e.target && e.target.id == 'pause') {
+        pause()
+    }else if (e.target && e.target.id == 'reset') {
+        clickToReset()
+    }else if (e.target && e.target.classList == 'notification') {
+     permission()
+    }
+})
