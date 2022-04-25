@@ -144,25 +144,25 @@ notificationBtn.addEventListener('mousedown', () => {
 
 // mobile events
 
-// start.addEventListener('touchstart', () => {
-//     start.classList.add('pressed')
-//     if (start.classList.contains('pressed')) {
-//         start.classList.add('s-hidden')
-//         reset.classList.remove('hide-reset')
-//         paused.classList.remove('p-hidden')
-//     }
+start.addEventListener('touchend', () => {
+    start.classList.add('pressed')
+    if (start.classList.contains('pressed')) {
+        start.classList.add('s-hidden')
+        reset.classList.remove('hide-reset')
+        paused.classList.remove('p-hidden')
+    }
 
-//     let interval = setInterval(() => {
-//         if (!isPaused) {
-//             countDown()
-//             title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
-//         }
-//         if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
-//             clearInterval(interval)
-//             notifyMe()
-//         }
-//     }, 1000)
-// })
+    let interval = setInterval(() => {
+        if (!isPaused) {
+            countDown()
+            title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
+        }
+        if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
+            clearInterval(interval)
+            notifyMe()
+        }
+    }, 1000)
+})
 
 // paused.addEventListener('touchstart', pause)
 
