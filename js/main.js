@@ -34,31 +34,31 @@ function pause() {
 function countDown() {
     if (Number(h.value) > 0 && Number(m.value) <= 0 && Number(s.value) <= 0) {
         if (Number(h.value) > 0) {
-            h.value--
+            h.value--;
             if (h.value < 10) {
-                h.value = '0' + `${h.value}`
+                h.value = '0' + `${h.value}`;
             }
-            h.value
+            h.value;
         }
         m.value = 59;
         s.value = 59;
     } else if (Number(m.value) > 0 && Number(s.value) <= 0) {
         if (m.value > 0) {
-            m.value--
+            m.value--;
             if (m.value < 10) {
-                m.value = '0' + `${m.value}`
+                m.value = '0' + `${m.value}`;
             }
-            m.value
+            m.value;
         }
-        s.value = 59
+        s.value = 59;
 
     } else if (Number(s.value) > 0) {
         if (s.value > 0) {
-            s.value--
+            s.value--;
             if (s.value < 10) {
-                s.value = '0' + `${s.value}`
+                s.value = '0' + `${s.value}`;
             }
-            s.value
+            s.value;
         }
     }
 }
@@ -67,11 +67,11 @@ function notifyMe() {
     // Let's check whether notification permissions have already been granted
     if (Notification.permission === "granted") {
         // If it's okay let's create a notification
-        showNotif()
+        showNotif();
     }
     // Otherwise, we need to ask the user for permission
     else if (Notification.permission !== "denied") {
-        alert('Time\' up')
+        alert('Time\' up');
     }
     // At last, if the user has denied notifications, and you
     // want to be respectful there is no need to bother them anymore.   
@@ -97,49 +97,49 @@ function showNotif() {
 function work() {
     start.classList.add('pressed')
     if (start.classList.contains('pressed')) {
-        start.classList.add('s-hidden')
+        start.classList.add('s-hidden');
         reset.classList.remove('hide-reset')
-        paused.classList.remove('p-hidden')
+        paused.classList.remove('p-hidden');
     }
 
     let interval = setInterval(() => {
         if (!isPaused) {
-            countDown()
+            countDown();
             title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
         }
         if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
-            clearInterval(interval)
-            notifyMe()
+            clearInterval(interval);
+            notifyMe();
         }
     }, 1000)
 }
 
 function clickToReset() {
-    h.value = ''
-    m.value = ''
-    s.value = ''
-    msg.value = ''
-    reset.classList.add('hide-reset')
-    paused.classList.add('p-hidden')
-    start.classList.remove('s-hidden')
-    location.reload()
+    h.value = '';
+    m.value = '';
+    s.value = '';
+    msg.value = '';
+    reset.classList.add('hide-reset');
+    paused.classList.add('p-hidden');
+    start.classList.remove('s-hidden');
+    location.reload();
 }
 
 function permission(){
     Notification.requestPermission().then(permission => {
         if (permission === 'denied') {
-            notificationBtn.innerText = 'Notification denied'
+            notificationBtn.innerText = 'Notification denied';
         } else {
-            notificationBtn.innerText = 'Notification enabled'
+            notificationBtn.innerText = 'Notification enabled';
         }
     })
 }
 
 // eventlisterners
-start.addEventListener('click', work)
+start.addEventListener('click', work);
 
-reset.addEventListener('click', clickToReset)
+reset.addEventListener('click', clickToReset);
 
-paused.addEventListener('click', pause)
+paused.addEventListener('click', pause);
 
-notificationBtn.addEventListener('click', permission)
+notificationBtn.addEventListener('click', permission);
