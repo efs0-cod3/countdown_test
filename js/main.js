@@ -114,10 +114,7 @@ function work() {
     }, 1000)
 }
 
-// eventlisterners
-start.addEventListener('mousedown', work)
-
-reset.addEventListener('mousedown', () => {
+function clickToReset() {
     h.value = ''
     m.value = ''
     s.value = ''
@@ -126,11 +123,9 @@ reset.addEventListener('mousedown', () => {
     paused.classList.add('p-hidden')
     start.classList.remove('s-hidden')
     location.reload()
-})
+}
 
-paused.addEventListener('mousedown', pause)
-
-notificationBtn.addEventListener('mousedown', () => {
+function permission(){
     Notification.requestPermission().then(permission => {
         if (permission === 'denied') {
             notificationBtn.innerText = 'Notification denied'
@@ -138,4 +133,13 @@ notificationBtn.addEventListener('mousedown', () => {
             notificationBtn.innerText = 'Notification enabled'
         }
     })
-})
+}
+
+// eventlisterners
+start.addEventListener('click', work)
+
+reset.addEventListener('click', clickToReset)
+
+paused.addEventListener('click', pause)
+
+notificationBtn.addEventListener('click', permission)
