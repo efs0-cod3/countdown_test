@@ -95,7 +95,7 @@ function showNotif() {
 }
 
 // eventlisterners
-start.addEventListener('click', () => {
+start.addEventListener('mousedown', () => {
     start.classList.add('pressed')
     if (start.classList.contains('pressed')) {
         start.classList.add('s-hidden')
@@ -115,7 +115,7 @@ start.addEventListener('click', () => {
     }, 1000)
 })
 
-reset.addEventListener('click', () => {
+reset.addEventListener('mousedown', () => {
     h.value = ''
     m.value = ''
     s.value = ''
@@ -128,9 +128,9 @@ reset.addEventListener('click', () => {
 
 })
 
-paused.addEventListener('click', pause)
+paused.addEventListener('mousedown', pause)
 
-notificationBtn.addEventListener('click', () => {
+notificationBtn.addEventListener('mousedown', () => {
     Notification.requestPermission().then(permission => {
         if (permission === 'denied') {
             notificationBtn.innerText = 'Notification denied'
@@ -142,34 +142,34 @@ notificationBtn.addEventListener('click', () => {
 
 // mobile events
 
-start.addEventListener('touchstart', () => {
-    start.classList.add('pressed')
-    if (start.classList.contains('pressed')) {
-        start.classList.add('s-hidden')
-        reset.classList.remove('hide-reset')
-        paused.classList.remove('p-hidden')
-    }
+// start.addEventListener('touchstart', () => {
+//     start.classList.add('pressed')
+//     if (start.classList.contains('pressed')) {
+//         start.classList.add('s-hidden')
+//         reset.classList.remove('hide-reset')
+//         paused.classList.remove('p-hidden')
+//     }
 
-    let interval = setInterval(() => {
-        if (!isPaused) {
-            countDown()
-            title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
-        }
-        if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
-            clearInterval(interval)
-            notifyMe()
-        }
-    }, 1000)
-})
+//     let interval = setInterval(() => {
+//         if (!isPaused) {
+//             countDown()
+//             title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
+//         }
+//         if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
+//             clearInterval(interval)
+//             notifyMe()
+//         }
+//     }, 1000)
+// })
 
-paused.addEventListener('touchstart', pause)
+// paused.addEventListener('touchstart', pause)
 
-notificationBtn.addEventListener('touchstart', () => {
-    Notification.requestPermission().then(permission => {
-        if (permission === 'denied') {
-            notificationBtn.innerText = 'Notification denied'
-        } else {
-            notificationBtn.innerText = 'Notification enabled'
-        }
-    })
-})
+// notificationBtn.addEventListener('touchstart', () => {
+//     Notification.requestPermission().then(permission => {
+//         if (permission === 'denied') {
+//             notificationBtn.innerText = 'Notification denied'
+//         } else {
+//             notificationBtn.innerText = 'Notification enabled'
+//         }
+//     })
+// })
