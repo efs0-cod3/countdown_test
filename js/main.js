@@ -138,6 +138,7 @@ function permission(){
 let time_container = document.querySelector('.time')
 
 time_container.addEventListener('click', (e) => {
+    console.log(e.target);
     if (e.target && e.target.id == 'start') {
         work()
     }else if (e.target && e.target.id == 'pause') {
@@ -147,4 +148,4 @@ time_container.addEventListener('click', (e) => {
     }else if (e.target && e.target.classList == 'notification') {
      permission()
     }
-})
+}, true)
