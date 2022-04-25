@@ -2,9 +2,9 @@
 const s = document.querySelector('.s');
 const m = document.querySelector('.m');
 const h = document.querySelector('.h');
-const start = document.getElementById('start');
-const reset = document.getElementById('reset');
-const paused = document.getElementById('pause');
+const start = document.querySelector('#start');
+const reset = document.querySelector('#reset');
+const paused = document.querySelector('#pause');
 const notificationBtn = document.querySelector('.notification');
 let isPaused = false;
 let title = document.querySelector('.ttl');
@@ -143,3 +143,26 @@ reset.addEventListener('click', clickToReset);
 paused.addEventListener('click', pause);
 
 notificationBtn.addEventListener('click', permission);
+
+
+// function beginSliding(e) {
+//     slider.onpointermove = slide;
+//     slider.setPointerCapture(e.pointerId);
+//   }
+  
+//   function stopSliding(e) {
+//     slider.onpointermove = null;
+//     slider.releasePointerCapture(e.pointerId);
+//   }
+  
+//   function slide(e) {
+//     slider.style.transform = `translate(${e.clientX - 70}px)`;
+//   }
+  
+//   const slider = document.getElementById('slider');
+  
+  start.onpointerdown = work;
+  reset.onpointerdown = clickToReset;
+  paused.onpointerdown = pause;
+  notificationBtn.onpointerdown = permission;
+  
