@@ -1,5 +1,5 @@
 //  selectors
-const s = document.querySelector('.s'); 
+const s = document.querySelector('.s');
 const m = document.querySelector('.m');
 const h = document.querySelector('.h');
 const start = document.getElementById('start');
@@ -15,7 +15,7 @@ const mbtn = document.querySelector('.msg-btn');
 function notif() {
     if (Notification.permission === 'denied') {
         notificationBtn.innerText = 'Notification denied';
-    } else if(Notification.permission === 'granted') {
+    } else if (Notification.permission === 'granted') {
         notificationBtn.innerText = 'Notification enabled';
     }
 }
@@ -75,8 +75,8 @@ function notifyMe() {
     }
     // At last, if the user has denied notifications, and you
     // want to be respectful there is no need to bother them anymore.   
-    if(msg != ''){
-    title.innerHTML = `${msg.value}`;
+    if (msg != '') {
+        title.innerHTML = `${msg.value}`;
     }
 }
 
@@ -94,7 +94,7 @@ function showNotif() {
     }
 }
 
-function work(){
+function work() {
     start.classList.add('pressed')
     if (start.classList.contains('pressed')) {
         start.classList.add('s-hidden')
@@ -126,8 +126,6 @@ reset.addEventListener('mousedown', () => {
     paused.classList.add('p-hidden')
     start.classList.remove('s-hidden')
     location.reload()
-
-
 })
 
 paused.addEventListener('mousedown', pause)
@@ -141,37 +139,3 @@ notificationBtn.addEventListener('mousedown', () => {
         }
     })
 })
-
-// mobile events
-
-start.addEventListener('touchend', () => {
-    start.classList.add('pressed')
-    if (start.classList.contains('pressed')) {
-        start.classList.add('s-hidden')
-        reset.classList.remove('hide-reset')
-        paused.classList.remove('p-hidden')
-    }
-
-    let interval = setInterval(() => {
-        if (!isPaused) {
-            countDown()
-            title.innerHTML = `CountDown - ${h.value}:${m.value}:${s.value}`;
-        }
-        if (Number(h.value) == 0 && Number(m.value) == 0 && Number(s.value) == 0) {
-            clearInterval(interval)
-            notifyMe()
-        }
-    }, 1000)
-})
-
-// paused.addEventListener('touchstart', pause)
-
-// notificationBtn.addEventListener('touchstart', () => {
-//     Notification.requestPermission().then(permission => {
-//         if (permission === 'denied') {
-//             notificationBtn.innerText = 'Notification denied'
-//         } else {
-//             notificationBtn.innerText = 'Notification enabled'
-//         }
-//     })
-// })
