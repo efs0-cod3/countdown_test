@@ -94,8 +94,7 @@ function showNotif() {
     }
 }
 
-// eventlisterners
-start.addEventListener('mousedown', () => {
+function work(){
     start.classList.add('pressed')
     if (start.classList.contains('pressed')) {
         start.classList.add('s-hidden')
@@ -113,7 +112,10 @@ start.addEventListener('mousedown', () => {
             notifyMe()
         }
     }, 1000)
-})
+}
+
+// eventlisterners
+start.addEventListener('mousedown', work)
 
 reset.addEventListener('mousedown', () => {
     h.value = ''
