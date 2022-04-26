@@ -10,7 +10,24 @@ let isPaused = false;
 let title = document.querySelector('.ttl');
 const msg = document.querySelector('.msg');
 const mbtn = document.querySelector('.msg-btn');
+let time_container = document.querySelector('.time')
 
+
+// e listerners 
+time_container.addEventListener('click', (e) => {
+    console.log(e.target);
+    if (e.target && e.target.id == 'start') {
+        work()
+    }else if (e.target && e.target.id == 'pause') {
+        pause()
+    }else if (e.target && e.target.id == 'reset') {
+        clickToReset()
+    }else if (e.target && e.target.classList == 'notification') {
+     permission()
+    }
+})
+
+// functions
 
 function notif() {
     if (Notification.permission === 'denied') {
@@ -134,18 +151,3 @@ function permission(){
         }
     })
 }
-
-let time_container = document.querySelector('.time')
-
-time_container.addEventListener('click', (e) => {
-    console.log(e.target);
-    if (e.target && e.target.id == 'start') {
-        work()
-    }else if (e.target && e.target.id == 'pause') {
-        pause()
-    }else if (e.target && e.target.id == 'reset') {
-        clickToReset()
-    }else if (e.target && e.target.classList == 'notification') {
-     permission()
-    }
-})
