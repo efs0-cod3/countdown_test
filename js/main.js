@@ -148,4 +148,17 @@ time_container.addEventListener('click', (e) => {
     }else if (e.target && e.target.classList == 'notification') {
      permission()
     }
-}, true)
+})
+
+time_container.addEventListener('mouseover', (e) => {
+    console.log(e.target);
+    if (e.target && e.target.id == 'start') {
+        work()
+    }else if (e.target && e.target.id == 'pause') {
+        pause()
+    }else if (e.target && e.target.id == 'reset') {
+        clickToReset()
+    }else if (e.target && e.target.classList == 'notification') {
+     permission()
+    }
+})
