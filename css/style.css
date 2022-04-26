@@ -56,22 +56,16 @@ button {
 #start {
      cursor: pointer;
      padding: 9px;
-     width: 62px;
-     height: 40px;
 }
 
 #pause {
      cursor: pointer;
      padding: 9px;
-     width: 62px;
-     height: 40px;
 }
 
 #reset {
      cursor: pointer;
      padding: 9px;
-     width: 62px;
-     height: 40px;
 }
 
 .notification{
@@ -114,11 +108,6 @@ button {
 
      .time {
           flex-direction: column;
-     }
-
-     .notification{
-          width: 282px;
-          height: 32.4px;
      }
 
 }
