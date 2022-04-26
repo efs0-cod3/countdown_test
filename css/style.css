@@ -5,48 +5,50 @@
 /*******************************************/
 
 body {
-display: flex;
-height: 100vh;
-justify-content: center;
-align-items: center;
-text-align: center;
-background: rgb(29, 29, 29);
-color:white;
-font-family: 'Inconsolata', monospace;
+     display: flex;
+     height: 100vh;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     background: rgb(29, 29, 29);
+     color: white;
+     font-family: 'Inconsolata', monospace;
 }
 
-h1{
+h1 {
      font-size: 3rem;
      font-weight: 600;
 }
 
-.time{
+.time {
      display: flex;
      flex-direction: column;
 }
 
-.time-form{
+.time-form {
      display: flex;
      align-items: center;
      justify-content: start;
 
 }
-.timeInputs{
+
+.timeInputs {
      display: inherit;
 }
-.itime{
+
+.itime {
      font-size: 20px;
      width: 50px;
      margin: 5px;
      text-align: center;
 }
 
-input{
+input {
      background-color: white;
      border-radius: 5px;
 }
 
-button{
+button {
      margin: 5px;
      padding: 5px 10px;
 }
@@ -54,43 +56,54 @@ button{
 #start {
      cursor: pointer;
      padding: 9px;
+     width: 62px;
+     height: 40px;
 }
 
-#pause{
+#pause {
      cursor: pointer;
      padding: 9px;
+     width: 62px;
+     height: 40px;
 }
 
-#reset{
+#reset {
      cursor: pointer;
      padding: 9px;
+     width: 62px;
+     height: 40px;
 }
 
-.hide-reset{
+.notification{
+     width: 282px;
+     height: 32.4px;
+}
+
+.hide-reset {
      display: none;
 }
 
-.p-hidden{
+.p-hidden {
      display: none;
 }
 
-.s-hidden{
+.s-hidden {
      display: none;
 }
 
-.second-field{
+.second-field {
      display: flex;
      flex-direction: column;
      justify-content: center;
 }
 
-.msg{
+.msg {
      margin: 5px;
      padding: 5px 10px;
 }
 
 @media all and (max-width: 800px) {
-     main{
+     main {
           width: 80%;
           display: flex;
           justify-content: center;
@@ -98,7 +111,14 @@ button{
           align-items: center;
 
      }
-     .time{
+
+     .time {
           flex-direction: column;
      }
+
+     .notification{
+          width: 282px;
+          height: 32.4px;
+     }
+
 }
