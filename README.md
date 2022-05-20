@@ -1,5 +1,4 @@
 # countDown_timer
-This is a challenge made for frontend eval
 
 ## Features
 - Built in notification api (show Desktop notification when done).
